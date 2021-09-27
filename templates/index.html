@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            
+        }
+       h1{
+           color: blueviolet;
+       }
+        .main{
+            text-align: center;
+        }
+        button{
+            margin: 1.5rem;
+            padding: 1rem;
+            border: 2px solid blueviolet;
+        }
+        input{  margin: 1rem;
+            }
+        #ip{ text-align: left;
+            padding-left: 40%;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Text Analyser</h1>
+        <form action='/analyze' method='post'>
+            {% csrf_token %}
+            <textarea name='textAreaData' style="margin: 0px; width: 535px; height: 217px;"></textarea><br>
+            <div id="ip">
+                <input type="checkbox" name="removepunc">Remove Punctuations <br>
+                <input type="checkbox" name="uppercase">Upper Case <br>
+                <input type="checkbox" name="remspace">Remove Space <br>
+                <input type="checkbox" name="reverse">Reverse Text<br>
+                <input type="checkbox" name="countChar">Character Counter<br>
+            </div>    
+            <button type="submit">Analyse Text</button>
+        </form>
+    </div>
+</body>
+</html>
